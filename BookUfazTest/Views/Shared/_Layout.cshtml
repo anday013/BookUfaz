@@ -1,0 +1,31 @@
+﻿@inject SignInManager<StudentUser> studentUser;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <nav>
+            @if (User.Identity.IsAuthenticated)
+            {
+
+            <form asp-action="Logout" asp-controller="Account" method="post">
+                <button type="submit">Logout</button>
+                @User.Identity.Name
+            </form>
+            }
+            else
+            {
+                <a asp-action="Login" asp-controller="Account">Login</a>
+                <a asp-action="Register" asp-controller="Account">Sing Up</a>
+            }
+        </nav>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

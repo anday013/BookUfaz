@@ -1,0 +1,23 @@
+﻿@model LoginViewModel
+
+
+@{ 
+
+}
+
+    <h2>Login Page</h2>
+
+    <div>
+        <form asp-action="Login" asp-controller="Account" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <label>Unistra Card ID:</label>
+            <input asp-for="ID" />
+            <label>Password:</label>
+            <input asp-for="Password" />
+            <label>
+                <input asp-for="RememberMe" />
+                @Html.DisplayNameFor(m => m.RememberMe);
+            </label>
+            <button type="submit">Login</button>
+        </form>
+    </div>

@@ -1,0 +1,40 @@
+﻿@model RegisterViewModel
+
+@{
+
+}
+
+
+<h2>Registration Page!</h2>
+<div>
+    <form asp-controller="Account" asp-action="Register" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <label asp-for="UnistraCardID"></label>
+        <input asp-for="UnistraCardID" class="form-control" />
+
+        <label asp-for="StudentNameSurname"></label>
+        <input asp-for="StudentNameSurname" class="form-control" />
+
+        <label asp-for="YearID"></label>
+        <input asp-for="YearID" class="form-control" />
+
+        <label asp-for="FacultyId"></label>
+        <input asp-for="FacultyId" class="form-control" />
+       
+
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+
+
+        <label asp-for="ConfirmPassword"></label>
+        <input asp-for="ConfirmPassword" class="form-control" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+        <button type="submit">Register</button>
+    </form>
+    </div>
